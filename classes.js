@@ -131,34 +131,79 @@ const myEuro1 = new CurrencyConverter(-1, "Euro");
 myEuro1.converter();
 
 class BankAccount {
-    constructor(balance) {
-      this._balance = balance; 
-    }
-    get balance() {
-      return this._balance;
-    }
-    deposit(amount) {
-      if (amount >= 0) {
-        this._balance += amount; 
-        console.log(`Deposit successful! Your new balance is ${this._balance}`);
-      } else {
-        console.log("The deposit amount must be positive.");
-      }
-    }
-  
-    
-    withdraw(amount) {
-      if (amount <= this._balance) { 
-        this._balance -= amount; 
-        console.log(` Your new balance is ${this._balance}`);
-      } else {
-        console.log("There are not sufficient funds.");
-      }
+  constructor(balance) {
+    this._balance = balance;
+  }
+  get balance() {
+    return this._balance;
+  }
+  deposit(amount) {
+    if (amount >= 0) {
+      this._balance += amount;
+      console.log(`Deposit successful! Your new balance is ${this._balance}`);
+    } else {
+      console.log("The deposit amount must be positive.");
     }
   }
-  const account = new BankAccount(1000);
-  account.deposit(500); 
-  account.deposit(-1);  
-  account.withdraw(200); 
-  account.withdraw(1700); 
-  
+
+  withdraw(amount) {
+    if (amount <= this._balance) {
+      this._balance -= amount;
+      console.log(` Your new balance is ${this._balance}`);
+    } else {
+      console.log("There are not sufficient funds.");
+    }
+  }
+}
+const account = new BankAccount(1000);
+account.deposit(500);
+account.deposit(-1);
+account.withdraw(200);
+account.withdraw(1700);
+
+class Product {
+  constructor(name2, price, description) {
+    this._name2 = name2;
+    this._description = description;
+    this.price = price;
+  }
+  get name2() {
+    return this._name2;
+  }
+  get price() {
+    return this._price;
+  }
+  get description() {
+    return this._description;
+  }
+  display() {
+    console.log(
+      `Product: ${this._name2} , Price: ${this._price} , Description: ${this._description}`
+    );
+  }
+  set name2(newName2) {
+    this._name2 = newName2;
+  }
+  set price(newPrice) {
+    if (newPrice >= 0) {
+      this._price = newPrice;
+    } else {
+      console.log("Price cannot be negative!");
+    }
+  }
+  set description(newDescription) {
+    this._description = newDescription;
+  }
+}
+const myProduct = new Product(
+  "Laptop",
+  1500,
+  "A powerful laptop with Intel i7 processor."
+);
+myProduct.display();
+const myProduct1 = new Product(
+  "Laptop",
+  -1500,
+  "A powerful laptop with Intel i7 processor."
+);
+myProduct1.display();
