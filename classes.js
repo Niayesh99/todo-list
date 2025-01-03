@@ -208,25 +208,27 @@ const myProduct1 = new Product(
 );
 myProduct1.display();
 
-class Vehicle{
-    constructor(make,model,year){
-        this.make=make;
-        this.model=model;
-        this.year=year;
-    }
-    displayInfo() {
-        console.log(`Vehicle: ${this.year} ${this.make} ${this.model}`);
-      }
+class Vehicle {
+  constructor(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+  displayInfo() {
+    console.log(`Vehicle: ${this.year} ${this.make} ${this.model}`);
+  }
 }
-class Car extends Vehicle{
-    constructor(make,model,year,color,fuelType){
-        super(make, model, year);
-        this.color=color;
-        this.fuelType=fuelType;
-    }
-    displayCarInfo() {
-        console.log(`${this.year} ${this.make} ${this.model}, Color: ${this.color}, Fuel Type: ${this.fuelType}`);
-      }
+class Car extends Vehicle {
+  constructor(make, model, year, color, fuelType) {
+    super(make, model, year);
+    this.color = color;
+    this.fuelType = fuelType;
+  }
+  displayCarInfo() {
+    console.log(
+      `${this.year} ${this.make} ${this.model}, Color: ${this.color}, Fuel Type: ${this.fuelType}`
+    );
+  }
 }
 const myVehicle = new Vehicle("Toyota", "Corolla", 2021);
 myVehicle.displayInfo();
@@ -234,5 +236,10 @@ myVehicle.displayInfo();
 const myCar = new Car("Honda", "Civic", 2022, "Red", "Petrol");
 myCar.displayCarInfo();
 
-
-
+class Auto {
+  static manufacturer = "Toyota";
+  static getManufacturer() {
+    return this.manufacturer;
+  }
+}
+console.log(Auto.getManufacturer());
