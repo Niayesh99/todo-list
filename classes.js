@@ -243,3 +243,16 @@ class Auto {
   }
 }
 console.log(Auto.getManufacturer());
+
+class MathUtils {
+  static calculateAreaOfCircle(radius) {
+    return Math.PI * (radius**2);
+  }
+  static calculateAreaOfSquare(side) {
+    return side * side;
+  }
+}
+console.log(MathUtils.calculateAreaOfCircle(2));
+console.log(MathUtils.calculateAreaOfSquare(4));
+
+
