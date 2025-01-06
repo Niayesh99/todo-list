@@ -19,6 +19,16 @@ class ToDoList {
       console.log(`Task with title "${title}" not found.`);
     }
   }
+  markAsCompleted(title) {
+    const task = this.tasks.find(task => task.title === title);
+    if (task) {
+        task.status = "completed";
+        console.log(`Task "${title}" marked as completed.`);
+    } else {
+        console.log(`Task "${title}" not found.`);
+    }
+}
+
 }
 
 
