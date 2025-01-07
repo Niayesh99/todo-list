@@ -29,9 +29,17 @@ class ToDoList {
     }
   }
   displayAllTasks() {
-    this.tasks.forEach(task => {
-        console.log(`Title: ${task.title}, Due Date: ${task.dueDate}, Status: ${task.status}`);
+    this.tasks.forEach((task) => {
+      console.log(
+        `Title: ${task.title}, Due Date: ${task.dueDate}, Status: ${task.status}`
+      );
     });
+  }
 }
-
-}
+const myTask= {
+    title:'learn Deutsch',
+    dueDate : "25.01 ",
+    status : "pending"
+};
+const jsonString = JSON.stringify(myTask);
+console.log(jsonString);
