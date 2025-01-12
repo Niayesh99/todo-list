@@ -13,6 +13,7 @@ toDos.addNewTask(myTask1);
 toDos.addNewTask(myTask2);
 toDos.addNewTask(myTask3);
 
+const jsonString = JSON.stringify(toDos, null, 2);
 
 fs.writeFile("tasks.json", jsonString, (err) => {
   if (err) {
