@@ -8,7 +8,7 @@ const myTask3 = new Task("learn b", "25.05", "pending");
 const jsonString = JSON.stringify(myTask, null, 2);
 
 
-fs.writeFile("tasks2.json", jsonString, (err) => {
+fs.writeFile("tasks.json", jsonString, (err) => {
   if (err) {
     console.log("Error writing file", err);
   } else {
