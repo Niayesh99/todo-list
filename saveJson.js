@@ -8,7 +8,10 @@ const myTask1 = new Task("learn y", "25.03", "pending");
 const myTask2 = new Task("learn a", "25.04", "pending");
 const myTask3 = new Task("learn b", "25.05", "pending");
 
-const jsonString = JSON.stringify(myTask, null, 2);
+toDos.addNewTask(myTask);
+toDos.addNewTask(myTask1);
+toDos.addNewTask(myTask2);
+toDos.addNewTask(myTask3);
 
 
 fs.writeFile("tasks.json", jsonString, (err) => {
