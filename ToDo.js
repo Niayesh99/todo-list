@@ -1,12 +1,19 @@
 import { Task } from "./task.js";
 
-class ToDoList {
+export default class ToDoList {
   constructor() {
     this.tasks = [];
+  }
+  getAllTasks() {
+    return this.tasks;
   }
 
   adding(title, dueDate, status) {
     const newTask = new Task(title, dueDate, status);
+    this.tasks.push(newTask);
+  }
+
+  addNewTask(newTask) {
     this.tasks.push(newTask);
   }
 
@@ -36,7 +43,6 @@ class ToDoList {
     });
   }
 }
-const myTask=new Task( 'learn Deutsch', "25.01 ", "pending")
+const myTask = new Task("learn Deutsch", "25.01 ", "pending");
 const jsonString = JSON.stringify(myTask);
 console.log(jsonString);
-
