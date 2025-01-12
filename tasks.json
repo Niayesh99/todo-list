@@ -1,5 +1,24 @@
 {
-  "title": "learn Deutsch",
-  "dueDate": "25.01",
-  "status": "pending"
+  "tasks": [
+    {
+      "title": "learn x",
+      "dueDate": "25.02",
+      "status": "pending"
+    },
+    {
+      "title": "learn y",
+      "dueDate": "25.03",
+      "status": "pending"
+    },
+    {
+      "title": "learn a",
+      "dueDate": "25.04",
+      "status": "pending"
+    },
+    {
+      "title": "learn b",
+      "dueDate": "25.05",
+      "status": "pending"
+    }
+  ]
 }
