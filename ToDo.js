@@ -36,10 +36,7 @@ class ToDoList {
     });
   }
 }
-const myTask= {
-    title:'learn Deutsch',
-    dueDate : "25.01 ",
-    status : "pending"
-};
+const myTask=new Task( 'learn Deutsch', "25.01 ", "pending")
 const jsonString = JSON.stringify(myTask);
 console.log(jsonString);
+
