@@ -2,6 +2,7 @@ import { Task } from "./task.js";
 import fs from "fs";
 import ToDoList from "./ToDo.js";
 import saveJson from "./saveJson.js";
+import loadJson from "./loadJson.js";
 
 const toDos = new ToDoList();
 const myTask = new Task("learn x", "25.02", "pending");
@@ -13,4 +14,6 @@ toDos.addNewTask(myTask);
 toDos.addNewTask(myTask1);
 toDos.addNewTask(myTask2);
 toDos.addNewTask(myTask3);
-saveJson(toDos, "tasks.json");
+await saveJson(toDos, "tasks.json");
+const loadedToDos = await loadJson("tasks.json");
+console.log(loadedToDos["tasks"][0]);

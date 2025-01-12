@@ -1,10 +1,13 @@
-import fs from "fs";
-fs.readFile("tasks.json", "utf8", (err, data) => {
-  if (err) {
+import fs from "fs/promises";
+export default async function loadJson(fileName) {
+  try {
+    const data = await fs.readFile(fileName, "utf8");
+    const parsedData = JSON.parse(data);
+    console.log(`successfull load ${parsedData} from ${fileName}`);
+
+    return parsedData;
+  } catch (err) {
     console.log("Error reading file:", err);
     return;
   }
-  const jsObject = JSON.parse(data);
-  console.log(jsObject);
-  console.log(jsObject["tasks"][0]);
-});
+}
